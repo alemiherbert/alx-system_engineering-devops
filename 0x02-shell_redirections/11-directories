@@ -1,2 +1,2 @@
 #!/bin/bash
-find . type f -print | wc -lR
+ls -lRa | wc -l
