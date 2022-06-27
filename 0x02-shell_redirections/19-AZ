@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -i "s/[ac]/[ze]/g"
+grep  "s/[Ac]/[Ze]/g"
