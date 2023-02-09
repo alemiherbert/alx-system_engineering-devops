@@ -1,2 +1,2 @@
-#!/bin/bash permissions
+#!/bin/bash
 chmod -R +X *
