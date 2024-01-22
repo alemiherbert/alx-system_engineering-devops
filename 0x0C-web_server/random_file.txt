@@ -1,0 +1,10 @@
+   99  git add .
+  100  git commit -m "Add destination directory"
+  101  git push
+  102  git add .
+  103  git commit -m "Add destination directory"
+  104  git push
+  105  ls
+  106  history
+  107  history | tail
+  108  history | tail > random_file.txt
