@@ -2,12 +2,12 @@
 
 # Install, configure and start a NGINX server
 
-apt-get -y update
+apt-get update
 apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 mkdir -p /var/www/html/
 sudo chmod -R 755 /var/www
-echo 'Hello, World!' > /var/www/html/index.html
+echo 'Hello World!' > /var/www/html/index.html
 SERVER_CONFIG=\
 "server {
     listen 80 default_server;
@@ -15,16 +15,13 @@ SERVER_CONFIG=\
     root /var/www/html;
     index index.html index.htm index.nginx-debian.html;
     server_name _;
-
     location / {
         try_files \$uri \$uri/ =404;
     }
-
-    location = /redirect_me {
-        return 301 https://www.autodesk.com/revit;
+    if (\$request_filename ~ redirect_me){
+		rewrite ^ https://www.autodesk.com/revit permanent;
     }
-}
-"
+}"
 
 bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
 if [ "$(pgrep -c nginx)" -le 0 ]; then
