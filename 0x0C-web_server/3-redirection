@@ -1,4 +1,4 @@
-#!/usr/bin/env nash
+#!/usr/bin/env bash
 
 # Install, configure and start a NGINX server
 
