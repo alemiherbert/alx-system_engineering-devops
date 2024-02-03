@@ -3,15 +3,15 @@
 # a custom header
 #
 balancer="\
-frontend haproxy_balancer
-    bind *:80
-    mode http
-    default_backend webservers
+frontend www-frontend
+	bind 0.0.0.0:80
+	mode http
+	default_backend www-backend
     
-backend webservers
-    balance roundrobin
-    server 276157-web-01 54.173.41.135:80 check
-    server 276157-web-02 18.208.120.167:80 check
+backend www-backend
+	balance roundrobin
+	server 276157-web-01 54.173.41.135:80 check
+	server 276157-web-02 18.208.120.167:80 check
 "
 # Update packages
 apt-get -y update
