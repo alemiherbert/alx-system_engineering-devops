@@ -1,0 +1,30 @@
+# Allow incoming traffic on loopback interface
+sudo ufw allow in on lo
+
+# Allow outgoing traffic on loopback interface
+sudo ufw allow out on lo
+
+# Allow established and related connections
+sudo ufw allow in from any to any state RELATED,ESTABLISHED
+sudo ufw allow out from any to any state RELATED,ESTABLISHED
+
+# Drop invalid packets
+sudo ufw deny in from any to any ctstate INVALID
+sudo ufw deny out from any to any ctstate INVALID
+
+# Allow specific ICMP types
+sudo ufw allow in icmp --icmp-type destination-unreachable
+sudo ufw allow in icmp --icmp-type source-quench
+sudo ufw allow in icmp --icmp-type time-exceeded
+sudo ufw allow in icmp --icmp-type parameter-problem
+sudo ufw allow in icmp --icmp-type echo-request
+
+# Allow DHCP client
+sudo ufw allow out 67/udp
+sudo ufw allow in 68/udp
+
+# Allow mDNS for service discovery
+sudo ufw allow in from any to 224.0.0.251 port 5353 proto udp
+
+# Allow UPnP for service discovery
+sudo ufw allow in from any to 239.255.255.250 port 1900 proto udp
