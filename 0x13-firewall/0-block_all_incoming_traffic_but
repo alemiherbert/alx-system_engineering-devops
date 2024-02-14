@@ -19,7 +19,7 @@ sudo ufw allow ssh
 sudo ufw -y enable
 
 # Allow connections on port 80
-sudo ufw allow http
+sudo ufw allow http/tcp
 
 # Allow connections on port 443
-sudo ufw allow https
+sudo ufw allow https/tcp
