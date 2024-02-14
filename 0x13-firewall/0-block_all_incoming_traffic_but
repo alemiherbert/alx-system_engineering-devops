@@ -9,8 +9,8 @@
 sudo apt-get install -y ufw
 sudo ufw status
 
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
+sudo ufw default deny incoming -y
+sudo ufw default allow outgoing -y
 
 # Allow connections on port 22 (SSH default)
 sudo ufw allow ssh
