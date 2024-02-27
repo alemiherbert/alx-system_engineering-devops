@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-"""This script collects data from an API"""
-
-import requests
-#!/usr/bin/python3
 """Returns to-do list information for a given employee ID."""
 import requests
 import sys
