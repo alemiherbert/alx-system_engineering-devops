@@ -18,7 +18,6 @@ printf %s "server {
     index index.html index.htm;
 
     add_header X-Served-By $HOSTNAME;
-
     server_name _;
 
     location /redirect_me {
