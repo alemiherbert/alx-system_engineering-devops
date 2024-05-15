@@ -15,7 +15,6 @@ backend www-backend
 "
 # Update packages
 apt-get -y update
-apt-get -y upgrade
 
 # Add HAProxy PPA
 apt-get -y install software-properties-common
