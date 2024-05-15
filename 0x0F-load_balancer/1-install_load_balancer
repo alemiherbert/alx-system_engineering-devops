@@ -10,8 +10,8 @@ frontend www-frontend
     
 backend www-backend
 	balance roundrobin
-	server 276157-web-01 34.202.158.248:80 check
-	server 276157-web-02 3.95.32.160:80 check
+	server 276157-web-01 54.157.144.210:80 check
+	server 276157-web-02 100.25.14.49:80 check
 "
 # Update packages
 apt-get -y update
