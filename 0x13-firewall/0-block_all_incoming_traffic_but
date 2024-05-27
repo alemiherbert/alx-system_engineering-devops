@@ -1,25 +1,8 @@
-#!/usr/bin/env bash
-# This script configures ufw to block all incomming traffic except
-# the following TCP ports:
-# - 22 (SSH)
-# - 443 (HTTPS SSL)
-# - 80 (HTTP)
-
-# Install the uncomplicated firewall
-sudo apt-get install -y ufw
+sudo apt-get install ufw -y
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+sudo ufw enable -y
 sudo ufw status
-
-sudo ufw default deny incoming -y
-sudo ufw default allow outgoing -y
-
-# Allow connections on port 22 (SSH default)
-sudo ufw allow ssh
-
-# Enable the fire wall
-sudo ufw -y enable
-
-# Allow connections on port 80
-sudo ufw allow http/tcp
-
-# Allow connections on port 443
-sudo ufw allow https/tcp
